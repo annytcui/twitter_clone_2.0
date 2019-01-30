@@ -1,3 +1,30 @@
 <% provide(:title, 'Sign up') %>
 <h1>Sign up</h1>
-<p>This will be a signup page for new users.</p>
+
+<div class="signup-form">
+  <%= form_for(@user, html: {id: "signup-form"}) do |f| %>
+    <%= render 'shared/error_messages' %>
+
+    <div class="form-group">
+      <%= f.text_field :name, class: "form-control", placeholder: "Your name" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.email_field :email, class: "form-control", placeholder: "Your email" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password" %>
+    </div>
+
+    <%= f.submit "Create my account", class: "btn btn-success" %>
+  <% end %>
+</div>
+
+<script type="text/javascript">
+  <%= render "validate.js" %>
+</script>

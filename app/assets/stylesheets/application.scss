@@ -5,13 +5,26 @@
 $umich-yellow: #ffcb05;
 $umich-blue: #00274c;
 
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 /* Universal */
 
 body {
   background-image: url("bg.jpg");
-  background-position: center 15%;
+  background-position: center 10%;
   background-size: cover;
   background-repeat: no-repeat;
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+  }
 }
 
 /* typography */
@@ -69,4 +82,61 @@ header ul {
       font-weight: bold;
     }
   }
+}
+
+/* sidebar */
+
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+
+.signup-form {
+  width: 250px;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  background-color: #fff;
+  opacity: 0.8;
+  border-radius: 30px;
+  clear: both;
+  float: left;
+  width: 100%;
+  padding: 15px;
+  margin-top: 45px;
+  @include box_sizing;
 }
