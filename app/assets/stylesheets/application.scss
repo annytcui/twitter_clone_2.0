@@ -143,7 +143,7 @@ aside {
 
 /* view layouts */
 
-.home, .signup, .login, .update {
+.home, .signup, .login, .update, .password-reset {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -157,7 +157,7 @@ aside {
 
 /* forms */
 
-.signup-form, .login-form, .update-form {
+.signup-form, .login-form, .update-form, .reset-form {
   width: 300px;
   .btn {
     margin-top: 15px;
