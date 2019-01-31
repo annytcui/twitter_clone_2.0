@@ -2,3 +2,8 @@ anny:
   name: Baozi Cui
   email: baozi@cutey.com
   password_digest: <%= User.digest('password') %>
+
+mark:
+  name: Panda Pan
+  email: panda@cutey.com
+  password_digest: <%= User.digest('password') %>
