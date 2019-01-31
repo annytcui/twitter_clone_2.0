@@ -5,5 +5,22 @@ anny:
 
 mark:
   name: Panda Pan
-  email: panda@cutey.com
+  email: panda@sheetupid.com
   password_digest: <%= User.digest('password') %>
+
+pikachu:
+  name: Pikachu Pan
+  email: pikachu@chrismatic.com
+  password_digest: <%= User.digest('password') %>
+
+Baozi:
+  name: Baozibao Cui
+  email: baozi@baozi.com
+  password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  name: <%= "User #{n}" %>
+  email: <%= "user-#{n}@example.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
