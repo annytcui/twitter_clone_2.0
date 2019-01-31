@@ -4,7 +4,7 @@ User.create!(name: "Baozi Cui",
             password_confirmation: "password",
             admin: true,
             activated: true,
-            activated: Time.zone.now)
+            activated_at: Time.zone.now)
 
 99.times do |n|
   name = Faker::Name.name
