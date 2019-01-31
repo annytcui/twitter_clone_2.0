@@ -14,17 +14,7 @@ $umich-blue: #00274c;
 /* Universal */
 
 body {
-  background-image: url("bg.jpg");
-  background-position: center 10%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  .main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 70vh;
-  }
+  margin-top: 100px;
 }
 
 /* typography */
@@ -36,7 +26,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   text-align: center;
 }
 
@@ -59,27 +49,51 @@ p {
 #logo {
   float: left;
   margin-left: 80px;
-  font-size: 1.7em;
-  color: #2b2e33;
+  font-size: 1.4em;
+  color: $umich-yellow;
   text-transform: uppercase;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 6px;
   font-weight: bold;
 }
 
 #logo:hover {
-  color: #3f4349;
+  opacity: 0.8;
   text-decoration: none;
 }
 
-header ul {
-  margin-right: 100px;
-  li {
-    margin-left: 35px;
-    a {
-      color: #2b2e33;
-      font-size: 1.1em;
-      font-weight: bold;
+header {
+  background-color: $umich-blue;
+  height: 60px;
+  box-shadow: 2px 2px $umich-yellow;
+
+  ul {
+    margin-right: 100px;
+    li {
+      margin-left: 35px;
+      a {
+        color: $umich-yellow;
+        font-size: 1.1em;
+        font-weight: bold;
+        &:hover {
+          color: $umich-yellow;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+/* footer */
+
+footer {
+  border-top: 1px solid #e8eaed;
+  padding: 5px 10px;
+  a {
+    color: #777;
+    &:hover {
+      color: #4b4d4f;
+      text-decoration: none;
     }
   }
 }
@@ -121,17 +135,32 @@ aside {
   margin-top: 15px;
 }
 
+
+/* view layouts */
+
+.home, .signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 60vh;
+}
+
+
 /* forms */
 
 .signup-form {
-  width: 250px;
+  width: 300px;
+  .btn {
+    margin-top: 15px;
+  }
 }
 
 /* miscellaneous */
 
 .debug_dump {
-  background-color: #fff;
-  opacity: 0.8;
+  background-color: #c9cacc;
+  border: 1px solid #c9cacc;
   border-radius: 30px;
   clear: both;
   float: left;

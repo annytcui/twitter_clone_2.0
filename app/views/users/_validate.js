@@ -2,7 +2,7 @@ $("#signup-form").validate({
   //error place
   errorPlacement: function (error, element) {
     error.insertAfter(element);
-    error.css({"color":"red", "background-color":"rgba(255, 255, 255, 0.6)"});
+    error.css("color", "red");
   },
   //adding rules
   rules: {
