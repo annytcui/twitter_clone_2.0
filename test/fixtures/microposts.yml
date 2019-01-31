@@ -1,15 +1,26 @@
 apple:
   content: "I love apples."
   created_at: <%= 10.minutes.ago %>
+  user: anny
 
 orange:
   content: "I love oranges."
   created_at: <%= 1.hour.ago %>
+  user: anny
 
 strawberry:
   content: "I love straberries."
   created_at: <%= 40.minutes.ago %>
+  user: anny
 
 most_recent:
   content: "I love watermelons."
   created_at: <%= Time.zone.now %>
+  user: anny
+
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  content: <%= Faker::Lorem.sentence(2) %>
+  created_at: <%= 1.day.ago %>
+  user: anny
+<% end %>
