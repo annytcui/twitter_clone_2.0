@@ -25,7 +25,7 @@ class PasswordResetsController < ApplicationController
   def update
     if @user.update_attributes(user_params)
       flash[:success] = "Password has been reset."
-      redirect_to login_urlå
+      redirect_to login_url
     end
   end
 
