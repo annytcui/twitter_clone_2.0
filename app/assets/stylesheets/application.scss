@@ -4,6 +4,7 @@
 /* mixins, variables, etc */
 $umich-yellow: #ffcb05;
 $umich-blue: #00274c;
+$gray-lighter: #e8eaed;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -90,7 +91,7 @@ header {
 /* footer */
 
 footer {
-  border-top: 1px solid #e8eaed;
+  border-top: 1px solid $gray-lighter;
   padding: 5px 10px;
   a {
     color: #777;
@@ -149,6 +150,10 @@ aside {
   height: 70vh;
 }
 
+.users-index {
+  height: 70vh;
+}
+
 
 /* forms */
 
@@ -175,6 +180,18 @@ aside {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
 }
 
 /* miscellaneous */
