@@ -141,22 +141,26 @@ aside {
 
 /* view layouts */
 
-.home, .signup, .login {
+.home, .signup, .login, .update {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 60vh;
+  height: 70vh;
 }
 
 
 /* forms */
 
-.signup-form, .login-form {
+.signup-form, .login-form, .update-form {
   width: 300px;
   .btn {
     margin-top: 15px;
   }
+}
+
+.update-form {
+  width: 400px;
 }
 
 .checkbox {
