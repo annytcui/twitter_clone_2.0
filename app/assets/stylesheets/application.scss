@@ -138,7 +138,7 @@ aside {
 
 /* view layouts */
 
-.home, .signup {
+.home, .signup, .login {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -149,7 +149,7 @@ aside {
 
 /* forms */
 
-.signup-form {
+.signup-form, .login-form {
   width: 300px;
   .btn {
     margin-top: 15px;
