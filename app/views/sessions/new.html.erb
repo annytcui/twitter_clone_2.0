@@ -11,6 +11,9 @@
 
       <div class="form-group">
         <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+        <small class="text-muted">
+          <%= link_to "forgot password?", new_password_reset_path %>
+        </small>
       </div>
 
       <%= f.label :remember_me, class: "checkbox inline" do %>
