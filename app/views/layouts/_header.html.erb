@@ -11,10 +11,10 @@
             Account
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Profile</a>
-            <a class="dropdown-item" href="#">Settings</a>
+            <%= link_to "Profile", current_user, class: "dropdown-item" %>
+            <%= link_to "Settings", '#', class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Log out</a>
+            <%= link_to "Log out", logout_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>
