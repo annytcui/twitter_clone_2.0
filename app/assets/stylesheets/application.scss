@@ -64,23 +64,26 @@ p {
 
 header {
   background-color: $umich-blue;
-  height: 60px;
+  height: 55px;
   box-shadow: 2px 2px $umich-yellow;
 
   ul {
     margin-right: 100px;
     li {
-      margin-left: 35px;
+      padding-left: 35px;
       a {
         color: $umich-yellow;
-        font-size: 1.1em;
-        font-weight: bold;
+        font-size: 1em;
         &:hover {
           color: $umich-yellow;
           opacity: 0.8;
         }
       }
     }
+  }
+
+  .dropdown-menu {
+    position: relative;
   }
 }
 
