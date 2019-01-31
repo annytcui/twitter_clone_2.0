@@ -93,6 +93,7 @@ header {
 footer {
   border-top: 1px solid $gray-lighter;
   padding: 5px 10px;
+  margin-top: 40px;
   a {
     color: #777;
     &:hover {
@@ -147,13 +148,12 @@ aside {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  height: 60vh;
 }
 
-.users-index {
-  height: 70vh;
+.pagination {
+  margin: 10px auto 10px 10px;
 }
-
 
 /* forms */
 

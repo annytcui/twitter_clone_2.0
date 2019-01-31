@@ -2,6 +2,10 @@
 <div class="users-index">
   <h1>Discover friends</h1>
 
+  <div class="pagination">
+    <%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
+
   <ul class="users">
     <% @users.each do |user| %>
       <li>
@@ -10,4 +14,8 @@
       </li>
     <% end %>
   </ul>
+
+  <div class="pagination">
+    <%= will_paginate @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
 </div>
