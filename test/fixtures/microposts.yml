@@ -24,3 +24,23 @@ micropost_<%= n %>:
   created_at: <%= 1.day.ago %>
   user: anny
 <% end %>
+
+baozi:
+  content: "Oh, I ate a baozi!"
+  created_at: <%= 2.years.ago %>
+  user: mark
+
+hotpot:
+  content: "Oh, I had hot pot."
+  created_at: <%= 2.days.ago %>
+  user: mark
+
+rice:
+  content: "I really enjoy rice."
+  created_at: <%= 10.minutes.ago %>
+  user: pikachu
+
+broccoli:
+  content: "I don't like broccoli."
+  created_at: <%= 4.hours.ago %>
+  user: pikachu
