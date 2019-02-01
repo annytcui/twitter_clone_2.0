@@ -1,7 +1,25 @@
 require 'test_helper'
 
 class CommentsControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+
+  def setup
+    @user = users(:anny)
+    @micropost = microposts(:apple)
+    @comment = comments(:apple)
+  end
+
+  test "should redirect create when not logged in" do
+    assert_no_difference 'Comment.count' do
+      post micropost_comments_path(@micropost.id), params: {
+            comment: { content: "A comment", user_id: @user.id }}
+    end
+    assert_redirected_to login_url
+  end
+
+  test "should redirect destroy when not logged in" do
+    assert_no_difference 'Comment.count' do
+      delete micropost_comment_path(@comment.micropost, @comment)
+    end
+    assert_redirected_to login_url
+  end
 end
