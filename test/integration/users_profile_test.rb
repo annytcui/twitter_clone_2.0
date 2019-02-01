@@ -5,6 +5,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:anny)
+    @microposts = @user.microposts
   end
 
   test "profile display" do
@@ -14,7 +15,10 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_select 'title', full_title(@user.name)
     assert_select 'h1', text: @user.name
     assert_select 'h1>img.gravatar'
-    assert_match @user.microposts.count.to_s, response.body
+    assert_match @microposts.count.to_s, response.body
+    @microposts.each do |micropost|
+      assert_match micropost.comments.count.to_s, response.body
+    end
     assert_select 'ul.pagination'
     @user.microposts.paginate(page: 1, per_page: 1).each do |micropost|
       assert_match micropost.content, response.body
