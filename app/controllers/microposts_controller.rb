@@ -7,7 +7,9 @@ class MicropostsController < ApplicationController
     if @micropost.save
       redirect_to root_url
     else
-      render 'static_pages/home'
+      # fallback
+      flash[:danger] = "Invalid micropost."
+      redirect_to root_url
     end
   end
 
