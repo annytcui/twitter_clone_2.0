@@ -2,9 +2,10 @@
     html: { id: "new-comment-mic-#{@micropost_id}" },
     remote: true) do |f| %>
 
-  <div class="field">
+  <div class="form-group field">
     <%= hidden_field_tag :micropost_id, @micropost_id %>
-    <%= f.text_area :content, placeholder: "Leave a comment..." %>
+    <%= f.text_area :content, placeholder: "Leave a comment...",
+            rows: 1, class: "form-control comment-textarea" %>
+    <%= f.submit "Comment", class: "btn btn-success" %>
   </div>
-  <%= f.submit "Comment", class: "btn btn-primary" %>
 <% end %>
