@@ -1,0 +1,15 @@
+one:
+  follower: anny
+  followed: pikachu
+
+two:
+  follower: anny
+  followed: baozi
+
+three:
+  follower: pikachu
+  followed: anny
+
+four:
+  follower: mark
+  followed: anny
