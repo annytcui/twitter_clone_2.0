@@ -14,4 +14,32 @@
           data: { confirm: "Are you sure you want to delete this micropost?" }  %>
     <% end %>
   </span>
+
+  <span class="comments-count" id="comments-count-mic-<%= micropost.id %>">
+    <%= pluralize(micropost.comments.count, "comment") %>
+  </span>
+  <% @micropost_id = micropost.id %>
+  <%= link_to "show/hide", "#comments-mic-#{@micropost_id}",
+            id: "comments-link-mic-#{@micropost_id}", remote: true  %>
+
+  <div id="comments-mic-<%= micropost.id %>">
+    <div id="comments-body-mic-<%= micropost.id %>">
+      <% if micropost.comments.any? %>
+        <ol class="comments">
+          <% @comments = micropost.comments %>
+          <%= render @comments %>
+        </ol>
+      <% end %>
+    </div>
+    <div class="comment-form">
+      <%= render 'shared/comment_form' %>
+    </div>
+  </div>
 </li>
+
+<!-- Add script to toggle comments -->
+<script type="text/javascript">
+  $('#comments-link-mic-<%= micropost.id %>').on('click', function() {
+    $('#comments-mic-<%= micropost.id %>').toggle();
+  });
+</script>

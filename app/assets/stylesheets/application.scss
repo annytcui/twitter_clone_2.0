@@ -6,6 +6,8 @@ $umich-yellow: #ffcb05;
 $umich-blue: #00274c;
 $gray-lighter: #e8eaed;
 $gray-light: #777;
+$blue-ligther: #5690ef;
+$green-light: #278491;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -281,6 +283,84 @@ span.picture {
   margin-top: 10px;
   input {
     border: 0;
+  }
+}
+
+/* comments */
+
+.comments-count {
+  color: $gray-light;
+  margin-left: 60px;
+}
+
+div[id^="comments-body-mic-"],
+.comments {
+  list-style: none;
+  margin-top: 7px;
+  padding: 0;
+  li {
+    padding: 5px 0;
+    border-top: none;
+  }
+  .gravatar {
+    margin: 3px 5px 0 35px;
+  }
+  .user {
+    margin-left: 0;
+  }
+  .comment-section {
+    width: 75%;
+    margin-left: 105px;
+  }
+  .content {
+    display: inline;
+    margin-left: 5px;
+  }
+  .timestamp {
+    font-size: 0.8em;
+    margin-left: 105px;
+  }
+}
+
+
+.comment-form {
+  width: 80%;
+  margin: 15px auto 0;
+  padding: 0;
+  .field {
+    margin-bottom: 0;
+  }
+  .btn-primary {
+    font-size: 0.9em;
+    margin: 0 auto 7px 5px;
+    padding: 3px 0;
+    width: 12%;
+  }
+}
+
+a[id^="comments-link-mic-"] {
+  margin-left: 10px;
+  text-decoration: none;
+  &:hover {
+    color: $blue-ligther;
+  }
+}
+
+div[id^="comments-mic-"] {
+  display: none;
+}
+
+div[id^="alert-mic-"] {
+  display: none;
+}
+
+.timestamp {
+  a {
+    color: $green-light;
+    text-decoration: none;
+    &:hover {
+      color: $blue-ligther;
+    }
   }
 }
 
