@@ -2,7 +2,7 @@ $("#micropost-form").validate({
   //error place
   errorPlacement: function (error, element) {
     error.insertAfter(element);
-    error.css("color", "#777");
+    error.css("color", "red");
   },
   //adding rules
   rules: {
