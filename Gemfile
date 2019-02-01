@@ -21,6 +21,7 @@ gem 'jquery-validation-rails'
 gem 'faker', '~> 1.6', '>= 1.6.6'
 gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 gem 'will_paginate-bootstrap4'
+gem 'carrierwave', '~> 0.11.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -41,6 +42,7 @@ group :test do
 end
 
 group :production do
+  gem 'fog', '~> 2.1'
   gem 'rails_12factor'
 end
 
