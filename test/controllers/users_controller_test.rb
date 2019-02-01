@@ -17,6 +17,12 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should redirect new when logged in" do
+    log_in_as(@user)
+    get signup_path
+    assert_redirected_to root_path
+  end
+
   test "should redirect edit when not logged in" do
     get edit_user_path(@user)
     assert_not flash.empty?

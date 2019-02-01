@@ -7,6 +7,12 @@ class PasswordResetsTest < ActionDispatch::IntegrationTest
     @user = users(:anny)
   end
 
+  test "should redirect new when logged in" do
+    log_in_as(@user)
+    get new_password_reset_path
+    assert_redirected_to root_path
+  end
+
   test "password resets" do
     get new_password_reset_path
     assert_template 'password_resets/new'
