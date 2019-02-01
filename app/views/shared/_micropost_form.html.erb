@@ -3,5 +3,10 @@
     <%= f.text_area :content, placeholder: "Compose new micropost...",
                     class: "form-control micropost-field", rows: 5 %>
   </div>
+  <div class="form-group">
+    <span class="picture text-muted">
+      <%= f.file_field :picture %>
+    </span>
+  </div>
   <%= f.submit "Post", class: "btn btn-success" %>
 <% end %>
