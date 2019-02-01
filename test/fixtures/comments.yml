@@ -1,11 +1,23 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+apple:
+  content: "I like apples."
+  created_at: <%= 10.days.ago %>
+  user: anny
+  micropost: baozi
 
-one:
-  content: MyText
-  user: one
-  micropost: one
+orange:
+  content: "I like oranges."
+  created_at: <%= 3.days.ago %>
+  user: mark
+  micropost: baozi
 
-two:
-  content: MyText
-  user: two
-  micropost: two
+watermelons:
+  content: "I like watermelons."
+  created_at: <%= 7.minutes.ago %>
+  user: pikachu
+  micropost: baozi
+
+most_recent:
+  content: "I like baozis."
+  created_at: <%= Time.zone.now %>
+  user: baozi
+  micropost: baozi
