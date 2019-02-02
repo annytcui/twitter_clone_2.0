@@ -363,6 +363,14 @@ span[id^="likes-count-mic-"] {
   }
 }
 
+li[id^="comment-"] {
+  .fa-thumbs-up {
+    margin-left: 20px;
+  }
+}
+
+/* microposts and comments */
+
 .timestamp {
   a {
     color: $green-light;
@@ -373,10 +381,6 @@ span[id^="likes-count-mic-"] {
   }
 }
 
-/* likes */
-.unlike-thumb {
-  color: #4286f4;
-}
 
 
 /* miscellaneous */
