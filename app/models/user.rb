@@ -102,6 +102,15 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  # Returns true if the current user has liked the micropost/comment.
+  def liked?(likeable)
+    if likeable.likes.find_by(user_id: self.id)
+      return true
+    else
+      return false
+    end
+  end
+
   private
 
     # Converts email to all lower-case.
