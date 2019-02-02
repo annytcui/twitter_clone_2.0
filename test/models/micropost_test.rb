@@ -37,4 +37,12 @@ class MicropostTest < ActiveSupport::TestCase
       @micropost.destroy
     end
   end
+
+  test "associated likes should be destroyed" do
+    @micropost.save
+    @micropost.likes.create!(user_id: @user.id)
+    assert_difference 'Like.count', -1 do
+      @micropost.destroy
+    end
+  end
 end

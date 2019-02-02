@@ -94,6 +94,15 @@ class UserTest < ActiveSupport::TestCase
     end
   end
 
+  test "associated likes should be destroyed" do
+   @user.save
+   micropost = @user.microposts.create!(content: "Lorem ipsum")
+   micropost.likes.create!(user_id: @user.id)
+   assert_difference 'Like.count', -1 do
+     @user.destroy
+   end
+ end
+
   test "should follow and unfollow a user" do
     anny = users(:anny)
     mark = users(:mark)

@@ -35,4 +35,12 @@ class CommentTest < ActiveSupport::TestCase
   test "order should be most recent first" do
     assert_equal comments(:most_recent), Comment.first
   end
+
+  test "associated likes should be destroyed" do
+    @comment.save
+    @comment.likes.create!(user_id: @user.id)
+    assert_difference 'Like.count', -1 do
+      @comment.destroy
+    end
+  end
 end
