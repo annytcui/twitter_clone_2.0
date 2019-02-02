@@ -10,7 +10,7 @@ orange:
   user: mark
   micropost: apple
 
-watermelons:
+watermelon:
   content: "I like watermelons."
   created_at: <%= 7.minutes.ago %>
   user: pikachu
