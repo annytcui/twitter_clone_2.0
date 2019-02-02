@@ -8,4 +8,7 @@
             rows: 1, class: "form-control comment-textarea" %>
     <%= f.submit "Comment", class: "btn btn-success" %>
   </div>
+  <div id="alert-mic-<%= @micropost_id %>">
+    Cannot be blank or longer than 140 characters.
+  </div>
 <% end %>
