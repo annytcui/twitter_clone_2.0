@@ -43,3 +43,18 @@ microposts.each do |micropost|
     micropost.comments.create!(content: content, user_id: user.id)
   end
 end
+
+# Likes
+users = User.order(:created_at).take(5)
+microposts = Micropost.order(:created_at).take(50)
+comments = Comment.order(:created_at).take(50)
+microposts.each do |micropost|
+  users.each do |user|
+    micropost.likes.create!(user_id: user.id)
+  end
+end
+comments.each do |comment|
+  users.each do |user|
+    comment.likes.create!(user_id: user.id)
+  end
+end
