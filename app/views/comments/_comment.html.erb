@@ -18,11 +18,13 @@
           remote: true %>
     <% end %>
     <!-- Like comment -->
-    <% if current_user.liked?(comment) %>
-      <i class="fas fa-thumbs-up"></i>
-    <% else %>
-      <i class="far fa-thumbs-up"></i>
-    <% end %>
-    <%= comment.likes.count %>
+    <span class="comment-likes">
+      <% if current_user.liked?(comment) %>
+        <i class="fas fa-thumbs-up"></i>
+      <% else %>
+        <i class="far fa-thumbs-up"></i>
+      <% end %>
+      <%= comment.likes.count %>
+    </span>
   </span>
 </li>
