@@ -1,0 +1,6 @@
+$('#alert-mic-<%= @micropost.id %>').show();
+$(document).ready(function() {
+  setTimeout(function() {
+    $('#alert-mic-<%= @micropost.id %>').fadeOut(300);
+  }, 5000);
+});
