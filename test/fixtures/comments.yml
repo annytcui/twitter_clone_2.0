@@ -16,7 +16,7 @@ watermelon:
   user: pikachu
   micropost: apple
 
-most_recent:
+baozi:
   content: "I like baozis."
   created_at: <%= Time.zone.now %>
   user: baozi

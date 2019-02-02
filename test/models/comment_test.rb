@@ -32,10 +32,6 @@ class CommentTest < ActiveSupport::TestCase
     assert_not @comment.valid?
   end
 
-  test "order should be most recent first" do
-    assert_equal comments(:most_recent), Comment.first
-  end
-
   test "associated likes should be destroyed" do
     @comment.save
     @comment.likes.create!(user_id: @user.id)
