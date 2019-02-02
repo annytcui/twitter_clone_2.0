@@ -9,13 +9,14 @@ class UsersController < ApplicationController
   end
 
   def show
+    @like = Like.new
     @user = User.find(params[:id])
     redirect_to root_url and return unless @user.activated?
-    @microposts = @user.microposts.paginate(page: params[:page], per_page: 10)
-    @microposts.each do |micropost|
-      @comments = micropost.comments
-      @comment = Comment.new
-    end
+    @microposts = @user.microposts.includes(
+      :likes, comments: [:likes, :user, :micropost]
+      ).paginate(page: params[:page], per_page: 10)
+    @comment = Comment.new
+    @like = Like.new
   end
 
   def new

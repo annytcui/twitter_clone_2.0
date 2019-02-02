@@ -38,8 +38,7 @@
     <div id="comments-body-mic-<%= micropost.id %>">
       <% if micropost.comments.any? %>
         <ol class="comments">
-          <% @comments = micropost.comments %>
-          <%= render @comments %>
+          <%= render micropost.comments %>
         </ol>
       <% end %>
     </div>
