@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_01_210048) do
+ActiveRecord::Schema.define(version: 2019_02_02_150728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 2019_02_01_210048) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "likeable_id"
+    t.string "likeable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["likeable_type", "likeable_id", "created_at"], name: "index_likes_on_likeable_type_and_likeable_id_and_created_at"
+    t.index ["user_id", "created_at"], name: "index_likes_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "microposts", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id"
@@ -35,6 +46,17 @@ ActiveRecord::Schema.define(version: 2019_02_01_210048) do
     t.string "picture"
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
+  end
+
+  create_table "postlikes", force: :cascade do |t|
+    t.bigint "micropost_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["micropost_id", "created_at"], name: "index_postlikes_on_micropost_id_and_created_at"
+    t.index ["micropost_id"], name: "index_postlikes_on_micropost_id"
+    t.index ["user_id", "created_at"], name: "index_postlikes_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_postlikes_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -65,5 +87,8 @@ ActiveRecord::Schema.define(version: 2019_02_01_210048) do
 
   add_foreign_key "comments", "microposts"
   add_foreign_key "comments", "users"
+  add_foreign_key "likes", "users"
   add_foreign_key "microposts", "users"
+  add_foreign_key "postlikes", "microposts"
+  add_foreign_key "postlikes", "users"
 end
