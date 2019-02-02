@@ -6,6 +6,7 @@ $umich-yellow: #ffcb05;
 $umich-blue: #00274c;
 $gray-lighter: #e8eaed;
 $gray-light: #777;
+$gray: #57585b;
 $blue-ligther: #5690ef;
 $green-light: #278491;
 
@@ -286,11 +287,14 @@ span.picture {
   }
 }
 
+.comments-likes {
+  margin: 5px 0px 0px 65px;
+}
+
 /* comments */
 
 .comments-count {
-  color: $gray-light;
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 div[id^="comments-body-mic-"],
@@ -343,20 +347,20 @@ div[id^="comments-body-mic-"],
   }
 }
 
-a[id^="comments-link-mic-"] {
-  margin-left: 10px;
-  text-decoration: none;
-  &:hover {
-    color: $blue-ligther;
-  }
-}
-
 div[id^="comments-mic-"] {
   display: none;
 }
 
 div[id^="alert-mic-"] {
   display: none;
+}
+
+span[id^="comments-count-mic-"],
+span[id^="likes-count-mic-"] {
+  cursor: pointer;
+  &:hover {
+    color: $gray;
+  }
 }
 
 .timestamp {

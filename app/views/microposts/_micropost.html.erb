@@ -1,5 +1,5 @@
 <li id="micropost-<%= micropost.id %>">
-  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
+  <%= link_to gravatar_for(micropost.user, size: 55), micropost.user %>
   <span class="user">
     <%= link_to micropost.user.name, micropost.user %>
   </span>
@@ -15,13 +15,25 @@
     <% end %>
   </span>
 
-  <span class="comments-count" id="comments-count-mic-<%= micropost.id %>">
-    <%= pluralize(micropost.comments.count, "comment") %>
-  </span>
-  <% @micropost_id = micropost.id %>
-  <%= link_to "show/hide", "#comments-mic-#{@micropost_id}",
-            id: "comments-link-mic-#{@micropost_id}", remote: true  %>
+  <!-- like and comment spans -->
+  <div class="comments-likes">
+    <span id="likes-count-mic-<%= micropost.id %>">
+      <% if current_user.liked?(micropost) %>
+        <i class="fas fa-thumbs-up"></i>
+      <% else %>
+        <i class="far fa-thumbs-up"></i>
+      <% end %>
+      <%= pluralize(micropost.likes.count, "like") %>
+    </span>
 
+    <span class="comments-count" id="comments-count-mic-<%= micropost.id %>">
+      <i class="far fa-comments"></i>
+      <%= pluralize(micropost.comments.count, "comment") %>
+    </span>
+  </div>
+
+  <!-- comment body -->
+  <% @micropost_id = micropost.id %>
   <div id="comments-mic-<%= micropost.id %>">
     <div id="comments-body-mic-<%= micropost.id %>">
       <% if micropost.comments.any? %>
@@ -39,7 +51,7 @@
 
 <!-- Add script to toggle comments -->
 <script type="text/javascript">
-  $('#comments-link-mic-<%= micropost.id %>').on('click', function() {
+  $('#comments-count-mic-<%= micropost.id %>').on('click', function() {
     $('#comments-mic-<%= micropost.id %>').toggle();
   });
 </script>
