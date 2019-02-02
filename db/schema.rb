@@ -29,12 +29,11 @@ ActiveRecord::Schema.define(version: 2019_02_02_150728) do
 
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "likeable_id"
     t.string "likeable_type"
+    t.bigint "likeable_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["likeable_type", "likeable_id", "created_at"], name: "index_likes_on_likeable_type_and_likeable_id_and_created_at"
-    t.index ["user_id", "created_at"], name: "index_likes_on_user_id_and_created_at"
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -46,17 +45,6 @@ ActiveRecord::Schema.define(version: 2019_02_02_150728) do
     t.string "picture"
     t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_microposts_on_user_id"
-  end
-
-  create_table "postlikes", force: :cascade do |t|
-    t.bigint "micropost_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["micropost_id", "created_at"], name: "index_postlikes_on_micropost_id_and_created_at"
-    t.index ["micropost_id"], name: "index_postlikes_on_micropost_id"
-    t.index ["user_id", "created_at"], name: "index_postlikes_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_postlikes_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -89,6 +77,4 @@ ActiveRecord::Schema.define(version: 2019_02_02_150728) do
   add_foreign_key "comments", "users"
   add_foreign_key "likes", "users"
   add_foreign_key "microposts", "users"
-  add_foreign_key "postlikes", "microposts"
-  add_foreign_key "postlikes", "users"
 end
