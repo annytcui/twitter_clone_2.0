@@ -311,7 +311,8 @@ span.picture {
 
 /* comments */
 
-.comments-count {
+.comments-count-span {
+  cursor: pointer;
   margin-left: 20px;
   i {
     font-size: 1.2em;
@@ -355,7 +356,6 @@ div[id^="comments-body-mic-"],
     }
   }
   .comment-likes {
-    cursor: pointer;
     display: flex;
     flex-direction: row;
   }
@@ -392,12 +392,14 @@ div[id^="alert-mic-"] {
 
 .micropost-likes,
 .comment-likes,
-.comments-count {
-  cursor: pointer;
+.comments-count-span {
   display: flex;
   flex-direction: row;
+}
+
+.comments-count {
   &:hover {
-    color: $gray;
+    text-decoration: underline;
   }
 }
 
@@ -416,6 +418,7 @@ div[id^="alert-mic-"] {
 /* likes */
 .btn-custom {
   border: white;
+  background-color: white;
   cursor: pointer;
   padding: 0;
   margin: 0;
