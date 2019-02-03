@@ -13,7 +13,9 @@ class CommentsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { redirect_to request.referrer || root_url }
+        format.html {
+          flash[:danger] = "Invalid comment."
+          redirect_to request.referrer || root_url }
         format.js { render action: "failed_create" }
       end
     end
@@ -38,5 +40,5 @@ class CommentsController < ApplicationController
       @micropost = Micropost.find_by(id: params[:micropost_id])
       @comment = Comment.find_by(id: params[:id])
       redirect_to request.referrer || root_url if !current_user?(@comment.user)
-    end 
+    end
 end
