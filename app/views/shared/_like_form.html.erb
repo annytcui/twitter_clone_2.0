@@ -1,0 +1,7 @@
+<%= form_for(current_user.likes.build, html: { class: "like-forms" }) do |f| %>
+  <%= hidden_field_tag :likeable_type, @likeable_type %>
+  <%= hidden_field_tag :likeable_id, @likeable_id %>
+  <button type="submit" class="btn-custom">
+    <i class="far fa-thumbs-up"></i>
+  </button>
+<% end %>

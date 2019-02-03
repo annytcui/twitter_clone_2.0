@@ -16,12 +16,14 @@
   </span>
 
   <!-- like and comment spans -->
+  <% @likeable_id = micropost.id %>
+  <% @likeable_type = 'Micropost' %>
   <div class="comments-likes">
     <span id="likes-count-mic-<%= micropost.id %>">
       <% if current_user.liked?(micropost) %>
-        <i class="fas fa-thumbs-up"></i>
+        <%= render 'shared/unlike_form' %>
       <% else %>
-        <i class="far fa-thumbs-up"></i>
+        <%= render 'shared/like_form' %>
       <% end %>
       <%= pluralize(micropost.likes.count, "like") %>
     </span>

@@ -289,12 +289,18 @@ span.picture {
 
 .comments-likes {
   margin: 5px 0px 0px 65px;
+  display: flex;
+  flex-direction: row;
 }
 
 /* comments */
 
 .comments-count {
   margin-left: 20px;
+  i {
+    font-size: 1.2em;
+    margin: 2px 5px 0;
+  }
 }
 
 div[id^="comments-body-mic-"],
@@ -321,11 +327,21 @@ div[id^="comments-body-mic-"],
     margin-left: 5px;
   }
   .timestamp {
+    display: flex;
+    flex-direction: row;
     font-size: 0.8em;
     margin-left: 105px;
+    .time {
+      margin-right: 5px;
+    }
+    .delete-link {
+      margin-right: 20px;
+    }
   }
   .comment-likes {
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -361,14 +377,10 @@ div[id^="alert-mic-"] {
 span[id^="comments-count-mic-"],
 span[id^="likes-count-mic-"] {
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
   &:hover {
     color: $gray;
-  }
-}
-
-li[id^="comment-"] {
-  .fa-thumbs-up {
-    margin-left: 20px;
   }
 }
 
@@ -384,6 +396,20 @@ li[id^="comment-"] {
   }
 }
 
+/* likes */
+.btn-custom {
+  border: white;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.like-forms {
+  margin-right: 5px;
+  i {
+    font-size: 1.2em;
+  }
+}
 
 
 /* miscellaneous */

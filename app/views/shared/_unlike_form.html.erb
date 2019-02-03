@@ -1,0 +1,7 @@
+<%= form_for(current_user.likes.find_by(likeable_type: @likeable_type,
+        likeable_id: @likeable_id), html: { method: :delete,
+        class: "like-forms" }) do |f| %>
+  <button type="submit" class="btn-custom">
+    <i class="fas fa-thumbs-up"></i>
+  </button>
+<% end %>
