@@ -1,5 +1,6 @@
 <%= form_for(@micropost, html: { id: 'micropost-form' },
               remote: true) do |f| %>
+  <%= render 'shared/error_message', object: f.object %>
   <div class="form-group">
     <%= f.text_area :content, placeholder: "Compose new micropost...",
                     class: "form-control micropost-field", rows: 5 %>

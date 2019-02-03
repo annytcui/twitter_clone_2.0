@@ -12,8 +12,8 @@ class MicropostsController < ApplicationController
       end
     else
       # fallback
-      flash[:danger] = "Invalid micropost."
-      redirect_to root_url
+      @feed_items = current_user.feed.paginate(page: params[:page], per_page: 15)
+      render 'static_pages/home'
     end
   end
 
