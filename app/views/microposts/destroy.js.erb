@@ -1,0 +1,3 @@
+$('#user-microposts-count').html(
+      '<%= pluralize(current_user.microposts.count, "micropost") %>');
+$('#micropost-<%= @micropost.id %>').remove();

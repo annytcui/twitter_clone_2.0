@@ -1,0 +1,4 @@
+$('#user-microposts-count').html(
+      '<%= pluralize(current_user.microposts.count, "micropost") %>');
+$('#user-feed').prepend(
+      '<%= escape_javascript(render @micropost) %>');

@@ -4,8 +4,12 @@ class MicropostsController < ApplicationController
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
+    @comment =  Comment.new
     if @micropost.save
-      redirect_to root_url
+      respond_to do |format|
+        format.html { redirect_to root_url }
+        format.js
+      end
     else
       # fallback
       flash[:danger] = "Invalid micropost."
@@ -15,7 +19,10 @@ class MicropostsController < ApplicationController
 
   def destroy
     @micropost.destroy
-    redirect_to request.referrer || root_url
+    respond_to do |format|
+      format.html { redirect_to request.referrer || root_url }
+      format.js
+    end
   end
 
   private
