@@ -5,9 +5,8 @@ class AccountActivationsController < ApplicationController
     if user && !user.activated? && user.authenticated?(:activation, params[:id])
       user.activate
       user.update_attribute(:activated_at, Time.zone.now)
-      log_in user
-      flash[:success] = "Account activated!"
-      redirect_to user
+      flash[:success] = "Account activated! Please log in."
+      redirect_to login_url
     else
       flash[:danger] = "Invalid activation link"
       redirect_to root_url
