@@ -26,4 +26,13 @@ class LikeTest < ActiveSupport::TestCase
     @like.likeable_type = nil
     assert_not @like.valid?
   end
+
+  test "user should only like one likeable once" do
+    @like.save
+    assert has_liked?(@user, @micropost)
+    new_like = @micropost.likes.build(user_id: @user.id)
+    assert_no_difference 'Like.count' do
+      new_like.save
+    end
+  end
 end

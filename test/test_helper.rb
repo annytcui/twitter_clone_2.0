@@ -16,6 +16,15 @@ class ActiveSupport::TestCase
   def log_in_as(user)
     session[:user_id] = user.id
   end
+
+  # Returns true if a user has liked a likeable
+  def has_liked?(user, likeable)
+    if likeable.likes.find_by(user_id: user.id)
+      return true
+    else
+      return false
+    end
+  end
 end
 
 class ActionDispatch::IntegrationTest
