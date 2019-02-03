@@ -12,10 +12,8 @@ class LikesController < ApplicationController
         format.js
       end
     else
-      respond_to do |format|
-        format.html { redirect_to request.referrer || root_url }
-        format.js { render action: "failed_create" }
-      end
+      flash[:danger] = "Like failed."
+      redirect_to request.referrer || root_url
     end
   end
 
