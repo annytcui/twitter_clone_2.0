@@ -1,0 +1,11 @@
+<% if @likeable_type == 'Micropost' %>
+  $('#likes-Micropost-<%= @likeable_id %>').html(
+    '<%= escape_javascript render "shared/unlike_form" %>');
+  $('#likes-Micropost-<%= @likeable_id %>').append(
+    '<%= pluralize(Micropost.find(@likeable_id).likes.count, "like") %>');
+<% else %>
+  $('#likes-Comment-<%= @likeable_id %>').html(
+    '<%= escape_javascript render "shared/unlike_form" %>');
+  $('#likes-Comment-<%= @likeable_id %>').append(
+    '<%= Comment.find(@likeable_id).likes.count %>');
+<% end %>

@@ -19,7 +19,7 @@
   <% @likeable_id = micropost.id %>
   <% @likeable_type = 'Micropost' %>
   <div class="comments-likes">
-    <span id="likes-count-mic-<%= micropost.id %>">
+    <span class="micropost-likes" id="likes-Micropost-<%= micropost.id %>">
       <% if current_user.liked?(micropost) %>
         <%= render 'shared/unlike_form' %>
       <% else %>

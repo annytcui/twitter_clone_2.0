@@ -2,8 +2,10 @@ class LikesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
 
   def create
-    @like = current_user.likes.build(likeable_type: params[:likeable_type],
-                                      likeable_id: params[:likeable_id])
+    @likeable_type = params[:likeable_type]
+    @likeable_id = params[:likeable_id]
+    @like = current_user.likes.build(likeable_type: @likeable_type,
+                                      likeable_id: @likeable_id)
     if @like.save
       respond_to do |format|
         format.html { redirect_to request.referrer || root_url }

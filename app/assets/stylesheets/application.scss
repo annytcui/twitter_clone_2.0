@@ -374,8 +374,9 @@ div[id^="alert-mic-"] {
   display: none;
 }
 
-span[id^="comments-count-mic-"],
-span[id^="likes-count-mic-"] {
+.micropost-likes,
+.comment-likes,
+.comments-count {
   cursor: pointer;
   display: flex;
   flex-direction: row;

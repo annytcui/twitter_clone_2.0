@@ -24,7 +24,7 @@
     <!-- Like comment -->
     <% @likeable_id = comment.id %>
     <% @likeable_type = 'Comment' %>
-    <span class="comment-likes">
+    <span class="comment-likes" id="likes-Comment-<%= comment.id %>">
       <% if current_user.liked?(comment) %>
         <%= render 'shared/unlike_form' %>
       <% else %>
