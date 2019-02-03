@@ -21,6 +21,8 @@ class LikesController < ApplicationController
 
   def destroy
     @like = Like.find_by(id: params[:id])
+    @likeable_type = @like.likeable_type
+    @likeable_id = @like.likeable_id
     @like.destroy
     respond_to do |format|
       format.html { redirect_to request.referrer || root_url }
