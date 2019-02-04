@@ -17,14 +17,16 @@
     </div>
   </div>
 <% else %>
-  <div class="home">
-    <h1>
-      Share life's moments with friends
-      <i class="fas fa-users"></i>
-    </h1>
-    <h2>Join TRAILS Demo App today!</h2>
-    <%= link_to "Sign up", signup_path, class: "btn btn-success btn-home" %>
-    <%= link_to "Log in", login_path, class: "btn btn-warning btn-home" %>
+  <div class="home-main">
+    <div class="home-content">
+      <h1>
+        Share life's moments with friends
+        <i class="fas fa-users"></i>
+      </h1>
+      <h2>Join TRAILS Demo App today!</h2>
+      <%= link_to "Sign up", signup_path, class: "btn btn-success btn-home" %>
+      <%= link_to "Log in", login_path, class: "btn btn-warning btn-home" %>
+    </div>
   </div>
 <% end %>
 

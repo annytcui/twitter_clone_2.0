@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Add font-awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+          crossorigin="anonymous">
+    <%= render 'layouts/shim' %>
+  </head>
+
+  <body class="home">
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= render 'shared/message' %>
+      <%= yield %>
+      <%= render 'layouts/footer_home' %>
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
+</html>
