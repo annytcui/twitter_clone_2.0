@@ -190,11 +190,12 @@ aside {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 75vh;
+  height: 70vh;
 }
 
 .home {
   background-image: url('bg.jpg');
+  background-position: center 5%;
   background-size: cover;
   background-repeat: no-repeat;
 }
