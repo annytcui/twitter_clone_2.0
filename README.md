@@ -8,22 +8,10 @@ To get started with the app, clone the repo and then install the needed gems:
 $ bundle install --without production
 ```
 
-Then, set up the PostgreSQL database:
+Next, set up the PostgreSQL database:
 
 ```
 $ rails db:setup
-```
-
-Next, migrate the database:
-
-```
-$ rails db:migrate
-```
-
-And seed some data for display:
-
-```
-$ rails db:seed
 ```
 
 Finally, run the test suite to verify that everything is working correctly:
