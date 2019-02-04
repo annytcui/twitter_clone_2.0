@@ -3,7 +3,6 @@ User.create!(name: "Anny Cui",
             email: "anny.cui@hotmail.com",
             password: "password",
             password_confirmation: "password",
-            admin: true,
             activated: true,
             activated_at: Time.zone.now)
 
@@ -11,7 +10,6 @@ User.create!(name: "Baozi Bao",
             email: "tianyuancuipan@gmail.com",
             password: "password",
             password_confirmation: "password",
-            admin: true,
             activated: true,
             activated_at: Time.zone.now)
 
@@ -19,7 +17,6 @@ User.create!(name: "Pikachu Charismatic",
             email: "annycuisz@gmail.com",
             password: "password",
             password_confirmation: "password",
-            admin: true,
             activated: true,
             activated_at: Time.zone.now)
 
@@ -27,7 +24,6 @@ User.create!(name: "Happy Cat",
             email: "tianyuan.cui.sc@gmail.com",
             password: "password",
             password_confirmation: "password",
-            admin: true,
             activated: true,
             activated_at: Time.zone.now)
 
@@ -35,7 +31,6 @@ User.create!(name: "Totoro Cute",
             email: "anny.cui@outlook.com",
             password: "password",
             password_confirmation: "password",
-            admin: true,
             activated: true,
             activated_at: Time.zone.now)
 
@@ -67,8 +62,8 @@ following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
 # Comments
-microposts = Micropost.order(:created_at).take(20)
-users = User.order(:created_at).take(5)
+microposts = Micropost.order(:created_at).take(50)
+users = User.order(:created_at).take(3)
 microposts.each do |micropost|
   users.each do |user|
     content = Faker::Lorem.sentence(2)
@@ -77,7 +72,7 @@ microposts.each do |micropost|
 end
 
 # Likes
-users = User.order(:created_at).take(5)
+users = User.order(:created_at).take(3)
 microposts = Micropost.order(:created_at).take(20)
 comments = Comment.order(:created_at).take(20)
 microposts.each do |micropost|
