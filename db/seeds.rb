@@ -77,8 +77,8 @@ microposts.each do |micropost|
 end
 
 # Likes
-users = User.order(:created_at).take(10)
-microposts = Micropost.order(:created_at).take(20)
+users = User.all
+microposts = Micropost.all
 comments = Comment.order(:created_at).take(20)
 microposts.each do |micropost|
   users.each do |user|
