@@ -34,6 +34,20 @@ User.create!(name: "Totoro Cute",
             activated: true,
             activated_at: Time.zone.now)
 
+User.create!(name: "Eating Cat",
+            email: "annycuipan@gmail.com",
+            password: "password",
+            password_confirmation: "password",
+            activated: true,
+            activated_at: Time.zone.now)
+
+User.create!(name: "Flying Cat",
+            email: "baoziannypan@gmail.com",
+            password: "password",
+            password_confirmation: "password",
+            activated: true,
+            activated_at: Time.zone.now)
+
 50.times do |n|
 name = Faker::Name.name
 email = "example-#{n+1}@example.com"
@@ -55,15 +69,17 @@ end
 
 # Following relationships
 users = User.all
-user = users.first
-following = users[2..50]
-followers = users[3..40]
-following.each { |followed| user.follow(followed) }
-followers.each { |follower| follower.follow(user) }
+following = users[7..50]
+followers = users[7..40]
+user_group = users[0..6]
+user_group.each do |user|
+  following.each { |followed| user.follow(followed) }
+  followers.each { |follower| follower.follow(user) }
+end
 
 # Comments
 microposts = Micropost.order(:created_at).take(50)
-users = User.order(:created_at).take(3)
+users = User.order(:created_at).take(5)
 microposts.each do |micropost|
   users.each do |user|
     content = Faker::Lorem.sentence(2)
@@ -72,7 +88,7 @@ microposts.each do |micropost|
 end
 
 # Likes
-users = User.order(:created_at).take(3)
+users = User.order(:created_at).take(7)
 microposts = Micropost.order(:created_at).take(20)
 comments = Comment.order(:created_at).take(20)
 microposts.each do |micropost|
