@@ -6,7 +6,4 @@ class StaticPagesController < ApplicationController
       @comment = Comment.new
     end
   end
-
-  def help
-  end
 end

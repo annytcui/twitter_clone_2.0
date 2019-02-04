@@ -194,14 +194,24 @@ aside {
 }
 
 .home {
-  height: 55vh;
-  .btn-success {
-    font-size: 1.2em;
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    margin-bottom: 20px;
   }
 }
 
 .pagination {
   margin: 10px auto 10px 10px;
+}
+
+.btn-home {
+  border-radius: 99px;
+  box-shadow: 0.5px 0.5px $gray-lighter;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  width: 250px;
 }
 
 /* forms */
