@@ -1,14 +1,29 @@
 # TRAILS Demo App
 
+This is a demo app built with Ruby on Rails.
+
 ## Getting started
 
-To get started with the app, clone the repo and then install the needed gems:
+To get started with the app, make sure you have postgreSQL installed.
+
+First, clone the repo and then install the needed gems:
 
 ```
 $ bundle install --without production
 ```
 
-Next, set up the PostgreSQL database:
+Then, log in PostgreSQL interactive terminal, create user "trails", and grant user "trails" with superuser privileges:
+
+```
+$ psql
+# CREATE USER trails WITH PASSWORD 'umich-trails';
+# ALTER ROLE trails SUPERUSER;
+# \q
+```
+
+> Note: to run the above command correctly in PostgreSQL interactive terminal, semicolons are very important.
+
+Next, set up the database:
 
 ```
 $ rails db:setup
