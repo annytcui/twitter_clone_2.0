@@ -1,8 +1,11 @@
 <% if @likeable_type == 'Micropost' %>
   $('#likes-Micropost-<%= @likeable_id %>').html(
     '<%= escape_javascript render "shared/like_form" %>');
-  $('#likes-Micropost-<%= @likeable_id %>').append(
+  $('#likes-count-mic-<%= @likeable_id %>').html(
     '<%= pluralize(Micropost.find(@likeable_id).likes.count, "like") %>');
+  $('#like-<%= @likeable_id %>-<%= current_user.id %>').remove();
+  $('#likes-avatars-count-mic-<%= @likeable_id %>').html(
+    '<%= pluralize(Micropost.find(@likeable_id).likes.count, "friend") %> have liked this post');
 <% else %>
   $('#likes-Comment-<%= @likeable_id %>').html(
     '<%= escape_javascript render "shared/like_form" %>');

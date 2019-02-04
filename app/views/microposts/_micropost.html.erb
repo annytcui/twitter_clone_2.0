@@ -20,13 +20,17 @@
   <% @likeable_id = micropost.id %>
   <% @likeable_type = 'Micropost' %>
   <div class="comments-likes">
-    <span class="micropost-likes" id="likes-Micropost-<%= micropost.id %>">
-      <% if current_user.liked?(micropost) %>
-        <%= render 'shared/unlike_form' %>
-      <% else %>
-        <%= render 'shared/like_form' %>
-      <% end %>
-      <%= pluralize(micropost.likes.count, "like") %>
+    <span class="micropost-likes">
+      <span id="likes-Micropost-<%= micropost.id %>">
+        <% if current_user.liked?(micropost) %>
+          <%= render 'shared/unlike_form' %>
+        <% else %>
+          <%= render 'shared/like_form' %>
+        <% end %>
+      </span>
+      <span id="likes-count-mic-<%= micropost.id %>">
+        <%= pluralize(micropost.likes.count, "like") %>
+      </span>
     </span>
 
     <span class="comments-count-span" id="comments-count-mic-<%= micropost.id %>">
@@ -35,6 +39,24 @@
         <%= pluralize(micropost.comments.count, "comment") %>
       </span>
     </span>
+  </div>
+
+  <% @micropost_id = micropost.id %>
+  <!-- Like body -->
+  <div id="likes-mic-<%= micropost.id %>">
+    <div class="user_avatars likes-avatars">
+      <span id="likes-avatars-mic-<%= micropost.id %>">
+        <% micropost.likes.each do |like| %>
+          <span id="like-<%= micropost.id %>-<%= like.user.id %>">
+            <%= link_to gravatar_for(like.user, size: 30), like.user %>
+          </span>
+        <% end %>
+      </span>
+      <span class="text-muted like-avatar-span"
+            id="likes-avatars-count-mic-<%= micropost.id %>">
+        <%= pluralize(micropost.likes.count, "friend") %> have liked this post
+      </span>
+    </div>
   </div>
 
   <!-- comment body -->
@@ -52,6 +74,13 @@
     </div>
   </div>
 </li>
+
+<!-- Add script to toggle likes -->
+<script type="text/javascript">
+  $('#likes-count-mic-<%= micropost.id %>').on('click', function() {
+    $('#likes-mic-<%= micropost.id %>').toggle();
+  });
+</script>
 
 <!-- Add script to toggle comments -->
 <script type="text/javascript">

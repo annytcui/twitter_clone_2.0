@@ -468,6 +468,28 @@ div[id^="alert-mic-"] {
   color: #3a6ec1;
 }
 
+.likes-avatars {
+  border-bottom: 1px solid $gray-lighter;
+  margin-left: 68px;
+  padding-bottom: 10px;
+}
+
+.like-avatar-span {
+  display: inline-block;
+  padding-top: 5px;
+}
+
+div[id^="likes-mic-"] {
+  display: none;
+}
+
+span[id^="likes-count-mic-"] {
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 /* miscellaneous */
 
 .debug_dump {
