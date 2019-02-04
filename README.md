@@ -21,7 +21,7 @@ $ psql
 # \q
 ```
 
-> Note: to run the above command correctly in PostgreSQL interactive terminal, semicolons are very important.
+> Note: to run the above commands correctly in PostgreSQL interactive terminal, semicolons are very important.
 
 Next, set up the database:
 
