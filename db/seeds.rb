@@ -68,7 +68,7 @@ followers.each { |follower| follower.follow(user) }
 
 # Comments
 microposts = Micropost.order(:created_at).take(20)
-users = User.order(:created_at).take(10)
+users = User.order(:created_at).take(5)
 microposts.each do |micropost|
   users.each do |user|
     content = Faker::Lorem.sentence(2)
@@ -77,8 +77,8 @@ microposts.each do |micropost|
 end
 
 # Likes
-users = User.all
-microposts = Micropost.all
+users = User.order(:created_at).take(5)
+microposts = Micropost.order(:created_at).take(20)
 comments = Comment.order(:created_at).take(20)
 microposts.each do |micropost|
   users.each do |user|
