@@ -6,7 +6,7 @@
   $('#likes-avatars-mic-<%= @likeable_id %>').append(
     '<span id="like-<%= @likeable_id %>-<%= current_user.id %>"><%= link_to gravatar_for(current_user, size: 30), current_user %></span>');
   $('#likes-avatars-count-mic-<%= @likeable_id %>').html(
-    '<%= pluralize(Micropost.find(@likeable_id).likes.count, "friend") %> have liked this post');
+    '<%= pluralize(Micropost.find(@likeable_id).likes.count, "friend") %> liked this post');
 <% else %>
   $('#likes-Comment-<%= @likeable_id %>').html(
     '<%= escape_javascript render "shared/unlike_form" %>');
