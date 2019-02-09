@@ -2,8 +2,8 @@
 @import "bootstrap";
 
 /* mixins, variables, etc */
-$umich-yellow: #ffcb05;
-$umich-blue: #00274c;
+$yellow-dark: #ffcb05;
+$blue-dark: #00274c;
 $gray-lighter: #e8eaed;
 $gray-light: #777;
 $gray: #57585b;
@@ -55,7 +55,7 @@ p {
   float: left;
   margin-left: 80px;
   font-size: 1.4em;
-  color: $umich-yellow;
+  color: $yellow-dark;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 6px;
@@ -68,19 +68,19 @@ p {
 }
 
 header {
-  background-color: $umich-blue;
+  background-color: $blue-dark;
   height: 55px;
-  box-shadow: 2px 2px $umich-yellow;
+  box-shadow: 2px 2px $yellow-dark;
 
   ul {
     margin-right: 100px;
     li {
       padding-left: 35px;
       a {
-        color: $umich-yellow;
+        color: $yellow-dark;
         font-size: 1em;
         &:hover {
-          color: $umich-yellow;
+          color: $yellow-dark;
           opacity: 0.8;
         }
       }
@@ -195,7 +195,7 @@ aside {
 
 .home {
   background-image: url('bg.jpg');
-  background-position: center 5%;
+  background-position: center 10%;
   background-size: cover;
   background-repeat: no-repeat;
 }
